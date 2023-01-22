@@ -100,7 +100,7 @@ public class CityControllerIT {
 		result.andExpect(jsonPath("$.name").value("Recife"));
 	}
 
-	@Test
+	@Test //
 	public void insertShouldReturn422WhenAdminLoggedAndBlankName() throws Exception {
 
 		String accessToken = tokenUtil.obtainAccessToken(mockMvc, adminUsername, adminPassword);
@@ -120,7 +120,7 @@ public class CityControllerIT {
 		result.andExpect(jsonPath("$.errors[0].message").value("Campo requerido"));
 	}
 
-	@Test
+	@Test //
 	public void findAllShouldReturnAllResourcesSortedByName() throws Exception {
 		
 		ResultActions result =
